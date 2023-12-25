@@ -1,9 +1,13 @@
 package com.example.projet.service;
-
-
+import com.example.projet.model.Administrator;
+import com.example.projet.repository.AdministratorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class AdministratorService {
+import java.util.List;
+import java.util.Optional;
+@Service
+public class AdministratorService  {
     private final AdministratorRepository administratorRepository;
 
     @Autowired
@@ -27,6 +31,6 @@ public class AdministratorService {
         administratorRepository.deleteById(administratorId);
     }
 
-    // اضافه کردن متدهای دیگر به متغیر administratorRepository بستگی دارد
+
 }
 

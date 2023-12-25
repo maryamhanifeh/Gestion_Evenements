@@ -8,16 +8,24 @@ public class Event {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-
+    @Column(length = 64, nullable = false)
         private String title;
+    @Column(length = 128, nullable = false, unique = true)
         private LocalDateTime startDateTime;
+    @Column(length = 128, nullable = false, unique = true)
         private LocalDateTime endDateTime;
+    @Column(length = 64, nullable = false)
         private String location;
-        private String commentaire;
+    @Column(length = 64, nullable = false)
+        private String Commentaire;
 
         @ManyToOne
         @JoinColumn(name = "user_id")
         private User owner;  // به جای user از عنوان بهتر owner استفاده شد.
+       @ManyToOne
+        @JoinColumn(name = "entrepreneur_id") // Use the correct column name
+       private Entrepreneur entrepreneur;
+
 
         // Constructors
         public Event() {
@@ -30,7 +38,7 @@ public class Event {
             this.startDateTime = startDateTime;
             this.endDateTime = endDateTime;
             this.location = location;
-            this.commentaire = commentaire;
+            this.Commentaire = commentaire;
             this.owner = owner;
         }
         public Long getId() {
@@ -73,11 +81,11 @@ public class Event {
         }
 
         public String getCommentaire() {
-            return commentaire;
+            return Commentaire;
         }
 
         public void setCommentaire(String commentaire) {
-            this.commentaire = commentaire;
+            this.Commentaire = commentaire;
         }
 
         public User getOwner() {

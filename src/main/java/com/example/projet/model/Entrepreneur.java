@@ -1,54 +1,58 @@
 package com.example.projet.model;
-
 import jakarta.persistence.*;
 import java.util.List;
 
     @Entity
-    @Table(name = "entrepreneurs")
+    @Table(name = "entrepreneur")
+
     public class Entrepreneur {
 
-            @Id
-            @GeneratedValue(strategy = GenerationType.IDENTITY)
-            private Long id;
-            private String name;
-            private String prenom;
 
-            @OneToMany(mappedBy = "entrepreneur")
-            private List<Event> events;
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+        @Column(length = 128, nullable = false, unique = true)
+        private String name;
+        @Column(length = 128, nullable = false, unique = true)
+        private String prenom;
 
-            // Constructor
-            public Entrepreneur() {
-            }
+        @OneToMany(mappedBy = "entrepreneur") // Make sure "entrepreneur" is a valid property in the Event class
+        private List<Event> events;
 
 
-            public Long getId() {
-                return id;
-            }
+        public Entrepreneur() {
+        }
 
-            public String getName() {
-                return name;
-            }
+        public Long getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
         public String getPrenom() {
-            return prenom ;
+            return prenom;
         }
 
-            public List<Event> getEvents() {
-
-                return events;
-            }
-            public void setId(Long id) {
-
-                this.id = id;
-            }
-            public void setName(String name) {
-                this.name = name;
-            }
-        public void setPrenom(String Prenom) {
-            this.Prenom = Prenom;
+        public List<Event> getEvents() {
+            return events;
         }
-            public void setEvents(List<Event> events) {
-                this.events = events;
-            }
 
+        public void setId(Long id) {
+            this.id = id;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setPrenom(String prenom) {
+            this.prenom = prenom;
+        }
+
+        public void setEvents(List<Event> events) {
+            this.events = events;
+        }
     }
 

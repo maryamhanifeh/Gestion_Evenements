@@ -2,10 +2,12 @@ package com.example.projet.service;
 import com.example.projet.model.Entrepreneur;
 import com.example.projet.repository.EntrepreneurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+@Service
+
 public class EntrepreneurService {
     private final EntrepreneurRepository entrepreneurRepository;
 
@@ -30,5 +32,4 @@ public class EntrepreneurService {
         entrepreneurRepository.deleteById(entrepreneurId);
     }
 
-    // اضافه کردن متدهای دیگر به متغیر entrepreneurRepository بستگی دارد
 }
