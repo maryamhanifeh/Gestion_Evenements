@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" th:href="@{/style/event-detail.css}" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a th:href="@{./acc}" class="navbar-brand">
+            <img th:src="@{./images/logo-white.png}" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav mr-auto d-lg-flex">
+                <li class="nav-item"><a th:href="@{./login}" class="nav-link">Login</a></li>-
+                <li class="nav-item"><a href="#" class="nav-link">Categories</a></li>
+                <li class="nav-item"><a th:href="@{./event-schedule}" class="nav-link">Schedule</a></li>
+                <li class="nav-item nav-item-btn"><a href="#" class="nav-link btn btn-light text-dark mr-auto flex-end" type="button">JOIN EVENT</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top mr-auto">-->
+<!--    <a class="navbar-brand" href=""><img th:src="@{/images/logo-white.png}" alt=""></a>-->
+<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse" id="navbarNav">-->
+<!--        <ul class="navbar-nav  mr-auto">-->
+<!--            <li class="nav-item"><a th:href="@{./login}" class="nav-link">Login</a></li>-->
+<!--            <li class="nav-item"><a href="#" class="nav-link">Venus</a></li>-->
+<!--            <li class="nav-item"><a href="#" class="nav-link">Categories</a></li>-->
+<!--            <li class="nav-item"><a href="#" class="nav-link">Register</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<section class="event-schedule mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 pe-lg-4">
+                <div class="event-detail-inner text-center text-md-start">
+                    <img th:src="@{/images/undraw_festivities_tvvj.svg}" class="banner-img mb-3" alt="">
+                    <h4 class="mt-4">Description Event</h4>
+                    <p class="mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam aut consequuntur, culpa debitis delectus dignissimos distinctio doloremque dolores ea eaque earum est expedita fugiat impedit ipsum iste itaque iusto maiores minus, nemo neque officia officiis omnis porro provident quaerat quidem quod reprehenderit rerum saepe sit vel voluptas. Earum, quaerat?
+                        <br><br>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam animi asperiores at consequatur deserunt dicta dolore dolores ea eius eos eveniet, facilis fugit ipsa iste iure magni natus necessitatibus neque nesciunt nulla numquam odit officiis, omnis optio pariatur quas quibusdam quisquam recusandae repellat soluta sunt, ullam vel velit vitae.
+                    </p>
+                    <div class="event-quote p-4 bg-grey d-md-flex align-content-center justify-content-between mb-4 text-center text-md-start">
+                        <i class="fa fa-quote-left p-4 bg-theme white fs-1 mb-md-0 mb-2"></i>
+                        <p class="mb-0 ps-md-4">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad commodi dolores error fuga mollitia nobis officiis possimus tenetur vero.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <!--  Sidebar-->
+            <div class="col-lg-4 n ps-lg-4">
+                <div class="sidebar-sticky mt-4">
+                    <div class="list-sidebar">
+                        <div class="sidebar-item mb-4 bg-grey p-4">
+                            <h5 class="bg-white p-3 text-lg-start text-center">About Speaker</h5>
+                            <div class="schedule-speaker d-lg-flex p-4 px-0 align-items-center text-center text-lg-start w-100 border-b">
+                                <img th:src="@{/images/illustration-user-avatar-icon.jpg}" alt="" class="avatar rounder-circle img-circle">
+                                <div class="speaker-content ms-3">
+                                    <h6 class="mb-0 theme">Ricky Malone</h6>
+                                    <small>Speaker</small>
+                                </div>
+                            </div>
+                            <div class="schedule-speaker d-lg-flex p-4 pb-0 px-0 align-items-center text-center text-lg start w-100">
+                                <img th:src="@{/images/illustration-user-avatar-icon.jpg}" alt="" class="avatar round-circle img-circle">
+                                <div class="speaker-content ms-3">
+                                    <h6 class="mb-0 theme">Jesus Holland</h6>
+                                    <small>Host & Speaker</small>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Event Info Sidebar -->
+                        <div class="sidebar-item mb-4 bg-grey p-4 ">
+                            <h5 class="bg-white p-3 text-lg-start text-center">Event Info</h5>
+                            <div class=" footer-contact d-flex flex-column align-items-center py-3 border-b">
+                                <i class="fa fa-calendar  fs-4"></i>
+                                <div class="footer-contact-content ps-3">
+                                    <h6 class="mb-1">Date</h6>
+                                    <span>27 September 2023</span>
+                                </div>
+                                <div class=" footer-contact d-flex flex-column align-items-center py-3 border-b">
+                                    <i class="fa fa-clock theme fs-4"></i>
+                                    <div class="footer-contact-content ps-3">
+                                        <h6 class="mb-1">Time</h6>
+                                        <span class="">9:00AM - 17:00PM</span>
+                                    </div>
+                                </div>
+                                <div class=" footer-contact d-flex flex-column align-items-center py-3 border-b">
+                                   <i class="fa-solid fa-location-dot fs-4"></i>
+                                    <div class="footer-contact-content ps-3">
+                                        <h6 class="mb-1">Venue</h6>
+                                        <span>Jakarta Garden City Hall, ROom C</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
