@@ -112,12 +112,12 @@
 </header>
 <nav>
 
-    <a class="logo" href="#" ><h1> ELSA </h1></a>
-    <a href="SeConecter .html">Se connecter/ S'inscrire</a>
-    <a href="Agenda">Agenda</a>
-    <a href="contacterNous.html">Nous Contacter</a>
-    <a href="">À propos de nous</a>
-    <a href="ConectionAdmine.html">Administrateur </a>
+    <a class="logo" th:src="@{/image/box33.jpg}" ><h1> ELSA </h1></a>
+    <a th:href="@{'/inscription'}">Se connecter/ S'inscrire</a>
+    <a th:href="@{'#'}">Agenda</a>
+    <a th:href="@{'/contact'}">Nous Contacter</a>
+    <a th:href="@{'#'}">À propos de nous</a>
+    <a th:href="@{'#'}">Administrateur </a>
 
 </nav>
 
@@ -135,23 +135,23 @@
 
     <div class="box3"> <img src="box33.jpg" alt="photo" width="350">
         <br>
-        <a href="Agenda" > <ion-icon name="calendar"></ion-icon>    Agenda enligne</a>
+        <a th:href="@{'#'}" > <ion-icon name="calendar"></ion-icon>    Agenda enligne</a>
         <br>
-        <a href="choisir.html"> <ion-icon name="create"></ion-icon>   creation d'un evenement</a>
+        <a th:href="@{'#'}"> <ion-icon name="create"></ion-icon>   creation d'un evenement</a>
         <br>
-        <a href="choisir.html"><ion-icon name="mail"></ion-icon>     notification</a>
+        <a th:href="@{'#'}"><ion-icon name="mail"></ion-icon>     notification</a>
         <br>
-        <a href="choisir.html"> <ion-icon name="person-circle"></ion-icon>   espace personel </a>
+        <a th:href="@{'#'}"> <ion-icon name="person-circle"></ion-icon>   espace personel </a>
 
     </div>
     <div class="box4">
 
-        <a href="inscription.html"><div class="box11"><h5>Construction & Renovation</h5><img src="box11-1 mantenance.bmp" alt="photo" width="50"> </div></a>
-        <a href="inscription.html"><div class="box12"><h5>Shop</h5> <img src="box12shop.bmp" alt="photo" width="50"> </div></a>
-        <a href="inscription.html"><div class="box13"> <h5>mecanique auto</h5><img src="box13 car&locomotive.bmp" alt="photo" width="50"></div></a>
-        <a href="inscription.html"><div class="box14"><h5>sante bien etre</h5> <img src="box14helth & medical.bmp" alt="photo" width="50"> </div></a>
-        <a href="inscription.html"><div class="box15"><h5>restauration</h5> <img src="box15 restauration.bmp" alt="photo" width="50"> </div></a>
-        <a href="inscription.html"> <div class="box16"> <h5>veterinaire</h5><img src="box16  veterinaire.bmp" alt="photo" width="50"> </div></a>
+        <a th:href="@{'#'}"><div class="box11"><h5>Construction & Renovation</h5><img src="box11-1 mantenance.bmp" alt="photo" width="50"> </div></a>
+        <a th:href="@{'#'}"><div class="box12"><h5>Shop</h5> <img src="box12shop.bmp" alt="photo" width="50"> </div></a>
+        <a th:href="@{'#'}"><div class="box13"> <h5>mecanique auto</h5><img src="box13 car&locomotive.bmp" alt="photo" width="50"></div></a>
+        <a th:href="@{'#'}"><div class="box14"><h5>sante bien etre</h5> <img src="box14helth & medical.bmp" alt="photo" width="50"> </div></a>
+        <a th:href="@{'#'}"><div class="box15"><h5>restauration</h5> <img src="box15 restauration.bmp" alt="photo" width="50"> </div></a>
+        <a th:href="@{'#'}"> <div class="box16"> <h5>veterinaire</h5><img src="box16  veterinaire.bmp" alt="photo" width="50"> </div></a>
 
     </div>
     <div class="box5">

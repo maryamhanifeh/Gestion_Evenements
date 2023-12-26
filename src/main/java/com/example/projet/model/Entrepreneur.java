@@ -7,7 +7,6 @@ import java.util.List;
 
     public class Entrepreneur {
 
-
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;

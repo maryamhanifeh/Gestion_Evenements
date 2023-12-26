@@ -25,7 +25,8 @@ public class RechercheService {
     }
 
     public List<User> searchUsers(String keyword) {
-        //  جستجو بر اساس نام کاربر
-        return userRepository.findByFullNameContaining(keyword);
+        // Search by nom or prenom using the provided keyword
+        return userRepository.findByUsernameContaining(keyword);
     }
+
 }

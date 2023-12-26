@@ -1,10 +1,12 @@
 package com.example.projet.model;
 
-import com.example.projet.repository.EntrepreneurRepository;
 import jakarta.persistence.*;
 import org.springframework.http.ResponseEntity;
+
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Entity
 @Table(name = "User")
@@ -17,15 +19,72 @@ public class User {
     @Column(length = 128, nullable = false, unique = true)
     private String password;
     @Column(length = 64, nullable = false)
-    private String fullName;
+    private String nom;
+    @Column(length = 64, nullable = false)
+    private String prenom;
+
+    @Column(length = 64)
+    private String photo;
+
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    @ManyToMany
+    @JoinTable(
+            name="user_role",
+            joinColumns = @JoinColumn(name="user_id"),
+            inverseJoinColumns = @JoinColumn(name="role_id")
+    )
+    private Set<Role> roles = new HashSet();
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    private boolean active;
     @OneToMany(mappedBy = "owner")
     private List<Event> events;
 
-    public User(Long id, String username, String password, String fullName) {
+    public User(Long id, String username, String password, String nom, String prenom) {
         this.id= id;
         this.username = username;
         this.password = password;
-        this.fullName = fullName;
+        this.nom  = nom;
+        this.prenom = prenom;
     }
     public User() {
     }
@@ -52,12 +111,7 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    public String getFullName() {
-        return fullName;
-    }
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
+
     public List<Event> getEvents() {
         return events;
     }

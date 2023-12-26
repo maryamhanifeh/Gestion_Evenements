@@ -10,4 +10,10 @@ public class AccueilController {
     public String showAccueil() {
         return "home";
     }
+
+    @GetMapping("/contact")
+    public String showContactForm(){return "contactez-nous";}
+
+    @GetMapping("/inscription")
+    public String showInscriptionForm(){return "inscription";}
 }

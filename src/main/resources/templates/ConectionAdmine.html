@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Admin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #4caf50;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1800px;
+            margin: auto;
+        }
+
+        .form-container {
+            flex: 1;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            box-sizing: border-box;
+            background: url() no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .error-message {
+            color: #ff0000;
+            margin-bottom: 16px;
+        }
+
+        button {
+            width: 45%;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 16px;
+            color: #333;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .image-container {
+
+            flex: 2;
+
+            background-size: cover;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="form-container">
+        <h1>Connexion Admin</h1>
+        <!-- Le formulaire de connexion -->
+        <form action="/connexion" method="post" autocomplete="off">
+            <label for="id">Identifiant:</label>
+            <input type="text" id="id" name="id" placeholder="ID" required>
+            <p id="id-error" class="error-message"></p>
+
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="password" required>
+            <p id="password-error" class="error-message"></p>
+
+            <button type="submit">Se connecter</button>
+        </form>
+        <!-- Lien vers la page d'inscription -->
+        <p>Vous n'avez pas de compte ? <a href="inscriptioinsAdmine.html">Inscrivez-vous ici</a>.</p>
+    </div>
+    <div class="image-container">
+        <img src="administrateur.jpg" alt="photo" width="800">
+    </div>
+</div>
+
+<script>
+    // Ajout de la vérification de correspondance des mots de passe
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("form").addEventListener("submit", function (event) {
+            var id = document.getElementById("id").value;
+            var password = document.getElementById("password").value;
+
+            // Validation de l'identifiant
+            var idRegex = /^[a-zA-Z0-9]+$/;
+            var idError = document.getElementById("id-error");
+            if (!idRegex.test(id)) {
+                event.preventDefault(); // Empêcher la soumission du formulaire
+                idError.innerHTML = "L'identifiant ne doit contenir que des lettres et des chiffres.";
+            } else {
+                idError.innerHTML = "";
+            }
+
+            // Validation de la force du mot de passe (au moins 8 caractères, une majuscule, une minuscule et un chiffre)
+            var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+            var passwordError = document.getElementById("password-error");
+            if (!passwordRegex.test(password)) {
+                event.preventDefault(); // Empêcher la soumission du formulaire
+                passwordError.innerHTML = "Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule et un chiffre.";
+            } else {
+                passwordError.innerHTML = "";
+            }
+        });
+    });
+</script>
+</body>
+
+</html>

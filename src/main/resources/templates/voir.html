@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de Gestion d'Événements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin: 20px 0;
+        }
+
+        input, label {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#tableau-de-bord">Tableau de bord</a></li>
+        <li><a href="#ajouter-evenement">Ajouter un événement</a></li>
+        <li><a href="#recherche-avancee">Recherche avancée</a></li>
+    </ul>
+</nav>
+
+<section id="tableau-de-bord">
+    <h2>Tableau de bord des événements</h2>
+    <ul>
+        <li><a href="#evenement-1">Événement 1</a></li>
+        <li><a href="#evenement-2">Événement 2</a></li>
+    </ul>
+</section>
+
+<section id="ajouter-evenement">
+    <h2>Ajouter un événement</h2>
+    <form id="ajouter-evenement-form">
+        <label for="nom">Nom de l'événement:</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <input type="submit" value="Ajouter l'événement">
+    </form>
+</section>
+
+<section id="recherche-avancee">
+    <h2>Recherche avancée</h2>
+    <form id="recherche-form">
+        <label for="recherche-date">Recherche par date:</label>
+        <input type="date" id="recherche-date" name="recherche-date">
+        <input type="submit" value="Rechercher">
+    </form>
+</section>
+
+<section id="evenement-1">
+    <h2>Détails de l'événement 1</h2>
+    <p>Nom: Événement 1</p>
+    <p>Date: 01/01/2023</p>
+    <p>Lieu: Lieu de l'événement</p>
+    <p>Description: Description de l'événement.</p>
+</section>
+
+<script>
+    // Exemple de script JavaScript (à adapter en fonction de vos besoins)
+    document.getElementById('ajouter-evenement-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Ajouter ici le code pour gérer l'ajout d'un événement (peut nécessiter une requête AJAX ou un lien vers un backend)
+        alert('Événement ajouté avec succès!');
+    });
+
+    document.getElementById('recherche-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Ajouter ici le code pour gérer la recherche avancée (peut nécessiter une requête AJAX ou un lien vers un backend)
+        alert('Recherche effectuée avec succès!');
+    });
+</script>
+
+</body>
+</html>

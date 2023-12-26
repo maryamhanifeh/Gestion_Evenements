@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Page</title>
+    <style>
+        body {
+
+
+            height: 600px;
+
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            background:  #4caf50;
+        }
+
+        #left-side {
+            flex: 1;
+            text-align: center;
+            padding: 12vh;
+        }
+
+        #right-side {
+            flex: 0.5;
+        }
+
+        #left-side h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #left-side label {
+            border: solid;
+            display: block;
+            margin-bottom: 20px;
+            margin-top: 5vh;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="left-side">
+    <h1>Se Connecter/ S'inscrire</h1>
+    <a href="inscription.html"><label for="entreprise">
+        <h2>Pour les professionnels</h2>
+        <br>
+        <p>Gerer et développez votre entreprise</p></a>
+    </label>
+    <a href="inscriptionParticulier.html"><label for="particulier">
+        <h2>Pour les particuliers</h2>
+        <br>
+        <p>Gérer votre temps et organiser votre vie</p></a>
+    </label>
+    </label>
+    <a href="agenda.html"><label for="visiteur">
+        <h2>Pour les visiteurs</h2>
+        <br>
+        <p>Consulter l'agendat seulement </p>
+    </a>
+    </label>
+</div>
+<div id="right-side">
+
+    <img src="choisir1.avif" alt="photo" width="500">
+</div>
+</body>
+</html>

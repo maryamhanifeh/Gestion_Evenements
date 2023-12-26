@@ -9,10 +9,14 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
     User findByUsername(String username);
 
-    List<User> findByFullNameContaining(String keyword);
+//    List<User> findByFirstNameContainingOrLastNameContaining();
+
 
     User findByUsernameAndPassword(String username, String password);
-    // Optional<User> findByUsername(String username);
+
+//    List<User> findByFirstNameContainingOrLastNameContaining(String firstName, String lastName);
+//    // Optional<User> findByUsername(String username);
+List<User> findByUsernameContaining(String keyword);
 
 
 }

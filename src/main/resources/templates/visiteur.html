@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visiteur - Site Web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        h1, h2, p {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Site Web pour Visiteurs</h1>
+
+    <!-- Formulaire d'inscription -->
+    <h2>S'inscrire sur le site web</h2>
+    <form action="/inscription" method="post">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@example.com" required>
+
+        <label for="motDePasse">Mot de passe:</label>
+        <input type="password" id="motDePasse" name="motDePasse" required>
+
+        <button type="submit">S'inscrire</button>
+    </form>
+
+    <!-- Formulaire de connexion -->
+    <h2>Se connecter à son compte</h2>
+    <form action="/connexion" method="post">
+        <label for="emailConnexion">Email:</label>
+        <input type="email" id="emailConnexion" name="emailConnexion" required>
+
+        <label for="motDePasseConnexion">Mot de passe:</label>
+        <input type="password" id="motDePasseConnexion" name="motDePasseConnexion" required>
+
+        <button type="submit">Se connecter</button>
+    </form>
+
+    <!-- Agenda avec jours fériés -->
+    <h2>Agenda - Jours Fériés</h2>
+    <ul>
+        <li>1er janvier - Jour de l'An</li>
+        <li>1er mai - Fête du Travail</li>
+        <li>14 juillet - Fête nationale</li>
+        <!-- Ajoutez d'autres jours fériés selon vos besoins -->
+    </ul>
+</div>
+</body>
+</html>

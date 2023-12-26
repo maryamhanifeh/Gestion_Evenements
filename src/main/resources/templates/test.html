@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Utilisateur</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #4caf50;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+
+      height: 100vh;
+
+    }
+
+    .container {
+      width: 80%;
+      max-width: 600px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    h1, p {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    input, textarea {
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      display: flex;
+      margin-bottom: 5px;
+
+
+    }
+
+    button:hover {
+      background-color: #2a2a2b;
+
+    }
+
+    .profile-picture {
+      text-align: center;
+    }
+
+    .profile-picture img {
+      max-width: 100px;
+      max-height: 100px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="profile-picture">
+    <img src="url_de_la_photo_de_profil.jpg" alt="Photo de profil">
+  </div>
+
+
+
+  <form action="/creer-evenement" method="post">
+    <h1>Utilisateur</h1>
+    <label for="photoProfil">Photo de Profil:</label>
+    <input type="file" id="photoProfil" name="photoProfil" accept="image/*">
+
+
+    <input type="text" id="recherche" name="recherche" placeholder="Nom de l'événement, date, utilisateur...">
+    <button onclick="effectuerRecherche()"><ion-icon name="search-outline"></ion-icon></button>
+
+    <label for="titre">Titre de l'Événement:</label>
+    <input type="text" id="titre" name="titre" required>
+
+    <label for="date">Date de l'Événement:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="heureDebut">Heure de Début:</label>
+    <input type="time" id="heureDebut" name="heureDebut" required>
+
+    <label for="heureFin">Heure de Fin:</label>
+    <input type="time" id="heureFin" name="heureFin" required>
+
+    <label for="emplacement">Emplacement de l'Événement:</label>
+    <input type="text" id="emplacement" name="emplacement" required>
+
+    <label for="description">Description de l'Événement:</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
+
+
+
+    <button type="submit">Créer l'Événement</button>
+
+    <button onclick="modifierEvenement()">Modifier l'Événement</button>
+    <button onclick="supprimerEvenement()">Supprimer l'Événement</button>
+
+  </form>
+
+
+
+
+
+
+
+
+  <script>
+    function creerEvenement() {
+      // Ajoutez ici la logique pour créer un événement, par exemple :
+      alert("Événement créé avec succès!");
+    }
+
+    function modifierEvenement() {
+      // Ajoutez ici la logique pour modifier un événement
+      alert("Événement modifié avec succès!");
+    }
+
+    function supprimerEvenement() {
+      // Ajoutez ici la logique pour supprimer un événement
+      alert("Événement supprimé avec succès!");
+    }
+
+    function effectuerRecherche() {
+      // Ajoutez ici la logique pour effectuer la recherche
+      var termeRecherche = document.getElementById("recherche").value;
+      alert("Recherche effectuée avec le terme : " + termeRecherche);
+    }
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</div>
+
+</body>
+</html>

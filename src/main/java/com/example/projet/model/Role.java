@@ -10,7 +10,10 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(length = 40, nullable = false, unique = true)
     private String nom;
+
+    @Column(length = 150, nullable = false)
     private String description;
 
     public Role() {
@@ -39,7 +42,17 @@ public class Role {
     public void setDescription(String description) {
         this.description = description;
     }
+    public Role(String nom, String description) {
+        this.nom = nom;
+        this.description = description;
+    }
 
+    public Role(String nom){this.nom = nom;}
+    public Role(int id, String nom, String description) {
+        this.id = id;
+        this.nom = nom;
+        this.description = description;
+    }
     @Override
     public String toString() {
         // return "Role{" + "nom=" + nom + '}';
